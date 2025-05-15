@@ -1,0 +1,289 @@
+/*----------------------------------------
+  THEME VARIABLES
+-----------------------------------------*/
+:root {
+  --bg-color: #ffffff;
+  --text-color: #212529;
+  --primary-color: #0d6efd;
+  --secondary-color: #6c757d;
+  --accent-color: #198754;
+  --danger-color: #dc3545;
+  --warning-color: #ffc107;
+  --info-color: #0dcaf0;
+
+  --card-bg: #f8f9fa;
+  --input-bg: #ffffff;
+  --transition-speed: 0.3s;
+}
+
+[data-theme="dark"] {
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --primary-color: #0dcaf0;
+  --secondary-color: #adb5bd;
+  --accent-color: #20c997;
+  --danger-color: #ff6b6b;
+  --warning-color: #ffd166;
+  --info-color: #6ec1e4;
+
+  --card-bg: #1e1e1e;
+  --input-bg: #2c2c2c;
+}
+
+/*----------------------------------------
+  BASE STYLES
+-----------------------------------------*/
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+  transition: color var(--transition-speed);
+}
+
+a:hover {
+  color: var(--accent-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+}
+
+/*----------------------------------------
+  BUTTONS
+-----------------------------------------*/
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color var(--transition-speed), color var(--transition-speed), transform 0.2s;
+}
+
+/* Primary Buttons */
+.btn-primary {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: darken(var(--primary-color), 10%);
+  transform: scale(1.05);
+}
+
+/* Secondary */
+.btn-secondary {
+  background-color: var(--secondary-color);
+  color: #fff;
+}
+
+.btn-secondary:hover {
+  background-color: darken(var(--secondary-color), 10%);
+}
+
+/* Accent, Info, Warning, Danger */
+.btn-accent {
+  background-color: var(--accent-color);
+  color: #fff;
+}
+
+.btn-warning {
+  background-color: var(--warning-color);
+  color: #212529;
+}
+
+.btn-danger {
+  background-color: var(--danger-color);
+  color: #fff;
+}
+
+.btn-info {
+  background-color: var(--info-color);
+  color: #fff;
+}
+
+/* Outline Buttons */
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+.btn-outline:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+/* Ghost Button */
+.btn-ghost {
+  background: transparent;
+  color: var(--text-color);
+}
+
+.btn-ghost:hover {
+  background-color: rgba(0,0,0,0.05);
+}
+
+/* Glow Effect */
+.btn-glow {
+  box-shadow: 0 0 0.5rem var(--primary-color);
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.btn-glow:hover {
+  box-shadow: 0 0 1rem var(--primary-color);
+  transform: scale(1.05);
+}
+
+/* Icon Button */
+.btn-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-pill {
+  border-radius: 2rem;
+}
+
+/* Disabled */
+.btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/*----------------------------------------
+  TOGGLE BUTTON
+-----------------------------------------*/
+#mode-toggle {
+  transition: all var(--transition-speed);
+}
+
+/*----------------------------------------
+  CARDS
+-----------------------------------------*/
+.card {
+  background-color: var(--card-bg);
+  transition: background-color var(--transition-speed), transform 0.2s ease;
+  border: none;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.card:hover {
+  transform: scale(1.01);
+}
+
+/*----------------------------------------
+  FORMS
+-----------------------------------------*/
+input, select, textarea {
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  border-radius: 0.5rem;
+  border: 1px solid #ced4da;
+  padding: 0.5rem;
+  transition: all var(--transition-speed);
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+/*----------------------------------------
+  TABLES
+-----------------------------------------*/
+.table-hover tbody tr:hover {
+  background-color: rgba(13, 110, 253, 0.05);
+  cursor: pointer;
+  transition: background-color var(--transition-speed);
+}
+
+/*----------------------------------------
+  FOOTER
+-----------------------------------------*/
+footer {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  padding: 1rem;
+  text-align: center;
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+/*----------------------------------------
+  ICONS
+-----------------------------------------*/
+i {
+  transition: transform 0.3s ease;
+}
+
+i:hover {
+  transform: scale(1.1);
+}
+
+/*----------------------------------------
+  UTILITIES
+-----------------------------------------*/
+.mt-1 { margin-top: 0.25rem; }
+.mt-2 { margin-top: 0.5rem; }
+.mt-3 { margin-top: 1rem; }
+.mb-3 { margin-bottom: 1rem; }
+.pt-2 { padding-top: 0.5rem; }
+.pb-2 { padding-bottom: 0.5rem; }
+.text-center { text-align: center; }
+.text-muted { color: #6c757d; }
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-in-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slide Left */
+@keyframes slideInLeft {
+  from { transform: translateX(-100%); opacity: 0; }
+  to   { transform: translateX(0); opacity: 1; }
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.6s ease-in-out;
+}
+
+/* Slide Right */
+@keyframes slideInRight {
+  from { transform: translateX(100%); opacity: 0; }
+  to   { transform: translateX(0); opacity: 1; }
+}
+
+.slide-in-right {
+  animation: slideInRight 0.6s ease-in-out;
+}
+
+/* Zoom In */
+@keyframes zoomIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+.zoom-in {
+  animation: zoomIn 0.4s ease-in-out;
+}
+

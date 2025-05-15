@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <title>Page Not Found</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+</head>
+<body>
+
+<button id="mode-toggle" class="btn btn-secondary" style="position: fixed; top: 1rem; right: 1rem; z-index: 999;">
+    🌓 Toggle Mode
+</button>
+
+<h2 class="mb-4">Oops! 😢 We couldn’t find that page.</h2>
+<p class="lead mb-4">Maybe it’s hiding somewhere else or has vanished! 🕵️‍♂️</p>
+
+<div layout:fragment="content">
+    <div class="text-center py-5">
+        <h1 class="display-1 text-danger">404</h1>
+        <h2 class="mb-4">Page Not Found</h2>
+        <p class="lead mb-4">The page you're looking for doesn't exist or has been moved.</p>
+        <div>
+            <a th:href="@{/}" class="btn btn-primary me-2">
+                <i class="fas fa-home"></i> Go to Home
+            </a>
+            <a th:href="@{/employees}" class="btn btn-secondary">
+                <i class="fas fa-users"></i> View Employees
+            </a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

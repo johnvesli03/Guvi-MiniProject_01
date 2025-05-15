@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Edit Employee</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+</head>
+<body>
+
+<button id="mode-toggle" class="btn btn-secondary" style="position: fixed; top: 1rem; right: 1rem; z-index: 999;">
+    🌓 Toggle Mode
+</button>
+<script>
+    // Toggle theme
+    const toggleBtn = document.getElementById('mode-toggle');
+    const root = document.documentElement;
+
+    // Load preference
+    if (localStorage.getItem('theme') === 'dark') {
+      root.setAttribute('data-theme', 'dark');
+    }
+
+    toggleBtn?.addEventListener('click', () => {
+      const isDark = root.getAttribute('data-theme') === 'dark';
+      root.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    });
+</script>
+<h2>Edit Employee Info ✏️</h2>
+<p class="lead">Update the details and hit save to reflect changes 🚀</p>
+
+<div class="container">
+    <h2>Edit Employee</h2>
+
+    <form th:action="@{/employees/{id}/edit(id=${employee.id})}" method="post">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" th:value="${employee.name}" class="form-control" required />
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" th:value="${employee.email}" class="form-control" required />
+        </div>
+
+        <div class="form-group">
+            <label for="department">Department</label>
+            <input type="text" id="department" name="department" th:value="${employee.department}" class="form-control" required />
+        </div>
+
+        <div class="form-group">
+            <label for="salary">Salary</label>
+            <input type="number" id="salary" name="salary" th:value="${employee.salary}" step="0.01" class="form-control" required />
+        </div>
+
+        <div class="form-group">
+            <label for="joinDate">Join Date</label>
+            <input type="date" id="joinDate" name="joinDate" th:value="${employee.joinDate}" class="form-control" required />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+    </form>
+</div>
+</body>
+</html>

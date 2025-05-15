@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Employee Details</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+</head>
+<body>
+<button id="mode-toggle" class="btn btn-secondary" style="position: fixed; top: 1rem; right: 1rem; z-index: 999;">
+    🌓 Toggle Mode
+</button>
+<script>
+    // Toggle theme
+    const toggleBtn = document.getElementById('mode-toggle');
+    const root = document.documentElement;
+
+    // Load preference
+    if (localStorage.getItem('theme') === 'dark') {
+      root.setAttribute('data-theme', 'dark');
+    }
+
+    toggleBtn?.addEventListener('click', () => {
+      const isDark = root.getAttribute('data-theme') === 'dark';
+      root.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    });
+</script>
+<h2>🔍 Meet Your Team Member</h2>
+<p class="card-text">📧 Email: <span th:text="${employee.email}"></span></p>
+<p class="card-text">🏢 Department: <span th:text="${employee.department}"></span></p>
+
+<div class="container">
+    <h2>Employee Details</h2>
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Name: <span th:text="${employee.name}"></span></h5>
+            <p class="card-text">Email: <span th:text="${employee.email}"></span></p>
+            <p class="card-text">Department: <span th:text="${employee.department}"></span></p>
+            <p class="card-text">Salary: <span th:text="${employee.salary}"></span></p>
+            <p class="card-text">Join Date: <span th:text="${#temporals.format(employee.joinDate, 'dd-MM-yyyy')}"></span></p>
+        </div>
+    </div>
+
+    <a href="#" th:href="@{/employees}" class="btn btn-primary mt-3">Back to Employee List</a>
+</div>
+</body>
+</html>

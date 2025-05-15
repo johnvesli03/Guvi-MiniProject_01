@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+</head>
+<body>
+<button id="mode-toggle" class="btn btn-secondary" style="position: fixed; top: 1rem; right: 1rem; z-index: 999;">
+    🌓 Toggle Mode
+</button>
+
+<h1 class="display-4">🎯 Welcome to Your Employee Hub</h1>
+<p class="lead">Track, update, and celebrate your team with ease! 🎉</p>
+<script>
+    // Toggle theme
+    const toggleBtn = document.getElementById('mode-toggle');
+    const root = document.documentElement;
+
+    // Load preference
+    if (localStorage.getItem('theme') === 'dark') {
+      root.setAttribute('data-theme', 'dark');
+    }
+
+    toggleBtn?.addEventListener('click', () => {
+      const isDark = root.getAttribute('data-theme') === 'dark';
+      root.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    });
+</script>
+<script>
+    // Toggle theme
+    const toggleBtn = document.getElementById('mode-toggle');
+    const root = document.documentElement;
+
+    // Load preference
+    if (localStorage.getItem('theme') === 'dark') {
+      root.setAttribute('data-theme', 'dark');
+    }
+
+    toggleBtn?.addEventListener('click', () => {
+      const isDark = root.getAttribute('data-theme') === 'dark';
+      root.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    });
+</script>
+<script>
+    // Toggle theme
+    const toggleBtn = document.getElementById('mode-toggle');
+    const root = document.documentElement;
+
+    // Load preference
+    if (localStorage.getItem('theme') === 'dark') {
+      root.setAttribute('data-theme', 'dark');
+    }
+
+    toggleBtn?.addEventListener('click', () => {
+      const isDark = root.getAttribute('data-theme') === 'dark';
+      root.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    });
+</script>
+<script>
+    // Toggle theme
+    const toggleBtn = document.getElementById('mode-toggle');
+    const root = document.documentElement;
+
+    // Load preference
+    if (localStorage.getItem('theme') === 'dark') {
+      root.setAttribute('data-theme', 'dark');
+    }
+
+    toggleBtn?.addEventListener('click', () => {
+      const isDark = root.getAttribute('data-theme') === 'dark';
+      root.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    });
+</script>
+<script>
+    // Toggle theme
+    const toggleBtn = document.getElementById('mode-toggle');
+    const root = document.documentElement;
+
+    // Load preference
+    if (localStorage.getItem('theme') === 'dark') {
+      root.setAttribute('data-theme', 'dark');
+    }
+
+    toggleBtn?.addEventListener('click', () => {
+      const isDark = root.getAttribute('data-theme') === 'dark';
+      root.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    });
+</script>
+<script>
+    // Toggle theme
+    const toggleBtn = document.getElementById('mode-toggle');
+    const root = document.documentElement;
+
+    // Load preference
+    if (localStorage.getItem('theme') === 'dark') {
+      root.setAttribute('data-theme', 'dark');
+    }
+
+    toggleBtn?.addEventListener('click', () => {
+      const isDark = root.getAttribute('data-theme') === 'dark';
+      root.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    });
+</script>
+<script>
+    // Toggle theme
+    const toggleBtn = document.getElementById('mode-toggle');
+    const root = document.documentElement;
+
+    // Load preference
+    if (localStorage.getItem('theme') === 'dark') {
+      root.setAttribute('data-theme', 'dark');
+    }
+
+    toggleBtn?.addEventListener('click', () => {
+      const isDark = root.getAttribute('data-theme') === 'dark';
+      root.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    });
+</script>
+<script>
+    // Toggle theme
+    const toggleBtn = document.getElementById('mode-toggle');
+    const root = document.documentElement;
+
+    // Load preference
+    if (localStorage.getItem('theme') === 'dark') {
+      root.setAttribute('data-theme', 'dark');
+    }
+
+    toggleBtn?.addEventListener('click', () => {
+      const isDark = root.getAttribute('data-theme') === 'dark';
+      root.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    });
+</script>
+<script>
+    // Toggle theme
+    const toggleBtn = document.getElementById('mode-toggle');
+    const root = document.documentElement;
+
+    // Load preference
+    if (localStorage.getItem('theme') === 'dark') {
+      root.setAttribute('data-theme', 'dark');
+    }
+
+    toggleBtn?.addEventListener('click', () => {
+      const isDark = root.getAttribute('data-theme') === 'dark';
+      root.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    });
+</script>
+
+<div layout:fragment="content">
+    <div class="jumbotron bg-light p-5 rounded mb-4">
+        <h1 class="display-4">Employee Management System</h1>
+        <p class="lead">A comprehensive solution for managing employee records, departments, and more.</p>
+        <hr class="my-4">
+        <p>Get started by exploring the employee database or adding new records.</p>
+        <a class="btn btn-primary btn-lg" th:href="@{/employees}" role="button">View Employees</a>
+        <a class="btn btn-success btn-lg ms-2" th:href="@{/employees/create}" role="button">Add Employee</a>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <div class="card-body text-center">
+                    <i class="fas fa-users fa-3x text-primary mb-3"></i>
+                    <h3 class="card-title">Employee Management</h3>
+                    <p class="card-text">Add, view, update, or remove employee records with ease.</p>
+                    <a th:href="@{/employees}" class="btn btn-outline-primary">Manage Employees</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <div class="card-body text-center">
+                    <i class="fas fa-chart-bar fa-3x text-success mb-3"></i>
+                    <h3 class="card-title">Department Overview</h3>
+                    <p class="card-text">See department statistics and employee distribution.</p>
+                    <a th:href="@{/dashboard}" class="btn btn-outline-success">View Dashboard</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <div class="card-body text-center">
+                    <i class="fas fa-file-export fa-3x text-info mb-3"></i>
+                    <h3 class="card-title">Reports</h3>
+                    <p class="card-text">Generate and export employee reports in various formats.</p>
+                    <a th:href="@{/reports}" class="btn btn-outline-info">Generate Reports</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

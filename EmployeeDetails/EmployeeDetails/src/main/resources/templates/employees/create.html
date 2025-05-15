@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <title>Create Employee</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+</head>
+<body>
+
+<!-- Toggle Light/Dark Mode -->
+<button id="mode-toggle" class="btn btn-secondary" style="position: fixed; top: 1rem; right: 1rem; z-index: 999;">
+    🌓 Toggle Mode
+</button>
+<script>
+    // Toggle theme
+    const toggleBtn = document.getElementById('mode-toggle');
+    const root = document.documentElement;
+
+    // Load preference
+    if (localStorage.getItem('theme') === 'dark') {
+      root.setAttribute('data-theme', 'dark');
+    }
+
+    toggleBtn?.addEventListener('click', () => {
+      const isDark = root.getAttribute('data-theme') === 'dark';
+      root.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    });
+</script>
+<!-- Page Header -->
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2>Create Employee</h2>
+    <a th:href="@{/employees}" class="btn btn-secondary">
+        <i class="fas fa-arrow-left"></i> Back to List
+    </a>
+</div>
+
+<!-- Form Card -->
+<div class="card shadow-sm">
+    <div class="card-body">
+        <form th:action="@{/employees/create}" th:object="${employee}" method="post" class="needs-validation" novalidate>
+
+            <!-- Corrected fragment reference -->
+            <div th:replace="~{form-fields :: fields}"></div>
+
+            <!-- Buttons -->
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
+                <button type="reset" class="btn btn-outline-secondary me-md-2">Reset</button>
+                <button type="submit" class="btn btn-primary">Create Employee</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- JS validation -->
+<th:block layout:fragment="scripts">
+    <script th:src="@{/js/form-validation.js}"></script>
+</th:block>
+
+</body>
+</html>

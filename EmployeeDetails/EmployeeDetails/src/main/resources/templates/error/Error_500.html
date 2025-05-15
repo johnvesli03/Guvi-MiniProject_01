@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <title>Server Error</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+</head>
+<body>
+<button id="mode-toggle" class="btn btn-secondary" style="position: fixed; top: 1rem; right: 1rem; z-index: 999;">
+    🌓 Toggle Mode
+</button>
+
+<h2 class="mb-4">Yikes! 🚨 Internal Server Glitch</h2>
+<p class="lead mb-4">We hit a snag. Our team is on it! 🛠️</p>
+
+<div layout:fragment="content">
+    <div class="text-center py-5">
+        <h1 class="display-1 text-danger">500</h1>
+        <h2 class="mb-4">Internal Server Error</h2>
+        <p class="lead mb-4">Something went wrong. Our team has been notified.</p>
+        <p class="text-muted" th:if="${errorMessage}" th:text="${errorMessage}"></p>
+        <div>
+            <a th:href="@{/}" class="btn btn-primary me-2">
+                <i class="fas fa-home"></i> Go to Home
+            </a>
+            <button class="btn btn-secondary" onclick="window.location.reload()">
+                <i class="fas fa-sync"></i> Try Again
+            </button>
+        </div>
+    </div>
+</div>
+</body>
+</html>
